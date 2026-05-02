@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+  <h1>Highlight Hopper</h1>
+
+  <label for="color-picker">Highlight color</label>
+  <div class="color-picker" id="color-picker" role="radiogroup" aria-label="Select highlight color">
+    <div class="color-swatch" data-color="yellow" title="Yellow" style="background: yellow;" role="radio" aria-label="Select yellow highlight color" aria-checked="false" tabindex="0"></div>
+    <div class="color-swatch" data-color="lightgreen" title="Light Green" style="background: lightgreen;" role="radio" aria-label="Select light green highlight color" aria-checked="false" tabindex="0"></div>
+    <div class="color-swatch" data-color="lightskyblue" title="Light Sky Blue" style="background: lightskyblue;" role="radio" aria-label="Select light sky blue highlight color" aria-checked="false" tabindex="0"></div>
+    <div class="color-swatch" data-color="pink" title="Pink" style="background: pink;" role="radio" aria-label="Select pink highlight color" aria-checked="false" tabindex="0"></div>
+    <div class="color-swatch" data-color="orange" title="Orange" style="background: orange;" role="radio" aria-label="Select orange highlight color" aria-checked="false" tabindex="0"></div>
+  </div>
+
+  <div id="tag-bar" role="toolbar" aria-label="Tag filter bar"></div>
+
+  <div id="highlight-list" role="region" aria-label="Saved highlights list">Loading highlights…</div>
+
+  <input id="search-input" type="text" placeholder="Search highlights and notes" aria-label="Search highlights and notes">
+
+  <button id="toggle-btn" aria-label="Enable or disable highlight mode" aria-pressed="false">Enable Highlight Mode</button>
+  <button id="undo-btn" aria-label="Undo the last highlight">Undo Last Highlight</button>
+  <button id="clear-btn" aria-label="Clear highlights on the current page">Clear Highlights (current page)</button>
+  <button id="open-options-btn" aria-label="Open export page">Open Export Page</button>
+
+  <button class="link-button" id="open-privacy-btn" aria-label="Open privacy policy">Privacy policy</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

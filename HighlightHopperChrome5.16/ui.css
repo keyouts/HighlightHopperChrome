@@ -1,0 +1,460 @@
+body {
+  background: #fff;
+  color: #000;
+  font-family: system-ui, sans-serif;
+  padding: 16px;
+  width: 320px;
+  user-select: none;
+}
+
+h1 {
+  border-bottom: 4px solid #000;
+  margin-bottom: 12px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.color-picker {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.color-swatch:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.color-swatch:active {
+  transform: translate(3px, 3px) scale(0.95);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.color-swatch.swatch-selected {
+  outline: 3px solid #000;
+  transform: translateY(-2px);
+}
+
+#tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tag-pill {
+  padding: 4px 8px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+  transition: transform 0.1s ease;
+}
+
+.tag-pill:hover {
+  transform: translateY(-2px);
+}
+
+.clear-pill {
+  background: #000;
+  color: #fff;
+}
+
+#highlight-list {
+  max-height: 260px;
+  overflow: auto;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  padding: 8px;
+  margin-top: 10px;
+  background: #fff;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #fff;
+  color: #000;
+  border: 3px solid #000;
+  font-weight: bold;
+  box-shadow: 4px 4px 0 #000;
+  box-sizing: border-box;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease, color 0.1s ease;
+}
+
+#search-input:hover {
+  background: #f2f2f2;
+}
+
+#search-input:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+#search-input::placeholder {
+  color: #555;
+}
+
+.source-group {
+  margin-bottom: 12px;
+  padding: 6px;
+  border-bottom: 2px solid #000;
+}
+
+.source-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.source-header:hover {
+  background: #f2f2f2;
+  transform: translateY(-1px);
+}
+
+.source-header:active {
+  transform: translateY(1px);
+}
+
+.source-title {
+  font-weight: 700;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.source-color-strip {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.source-color-pill {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.source-color-pill:hover {
+  transform: translateY(-2px) scale(1.1);
+}
+
+.source-color-pill:active {
+  transform: translate(2px, 2px) scale(0.9);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.highlight-item {
+  padding: 6px;
+  margin: 4px 0;
+  border-left: 6px solid;
+  background: #fafafa;
+  border-radius: 2px;
+  font-size: 13px;
+  transition: transform 0.1s ease, background 0.1s ease;
+  cursor: pointer;
+}
+
+.highlight-item:hover {
+  background: #f0f0f0;
+  transform: translateX(2px);
+}
+
+.highlight-item:active {
+  transform: translateX(4px) scale(0.98);
+}
+
+.highlight-note-preview {
+  margin-top: 4px;
+  padding: 6px;
+  border-radius: 2px;
+  border: 2px solid #000;
+  background: #fff;
+  font-size: 12px;
+  box-shadow: 2px 2px 0 #000;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.highlight-note-preview:hover {
+  background: #f2f2f2;
+  transform: translateX(2px);
+}
+
+.highlight-note-preview:active {
+  transform: translateX(4px) scale(0.98);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #000;
+  color: #fff;
+  border: 3px solid #000;
+  font-weight: bold;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.1s ease, color 0.1s ease;
+}
+
+button:hover {
+  background: #fff;
+  color: #000;
+}
+
+button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.hint {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.link-button {
+  margin-top: 6px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: underline;
+  background: transparent;
+  color: #000;
+  border: none;
+  box-shadow: none;
+  padding: 4px;
+  width: 100%;
+  transition: color 0.1s ease;
+}
+
+.link-button:hover {
+  color: #444;
+  text-decoration: none;
+}
+
+.highlight-hopper {
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1;
+  font-weight: 700;
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.highlight-hopper:hover {
+  background: #f2f2f2;
+}
+
+.highlight-hopper:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.highlight-hopper * {
+  background: transparent;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.highlight-hopper::selection {
+  background: rgba(0,0,0,0.08);
+  color: inherit;
+}
+
+.error-box {
+  margin-top: 10px;
+  padding: 8px;
+  border: 3px solid #000;
+  background: #ffb3b3;
+  color: #000;
+  font-weight: bold;
+  display: none;
+  box-shadow: 3px 3px 0 #000;
+}
+
+#import-file {
+  display: none;
+}
+
+.filename-label {
+  font-size: 12px;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.source-group > div:nth-child(2) {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+}
+
+.source-group.expanded > div:nth-child(2) {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#export-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tag-filter-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.export-tag-pill {
+  padding: 4px 8px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.export-tag-pill:hover {
+  transform: translateY(-2px);
+}
+
+.export-tag-pill:active {
+  transform: translateY(2px) scale(0.95);
+}
+
+.export-tag-pill.selected {
+  background: #d0ffd0;
+}
+
+.export-tag-clear {
+  padding: 4px 8px;
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+  transition: transform 0.1s ease;
+}
+
+.export-tag-clear:hover {
+  transform: translateY(-2px);
+}
+
+.export-tag-clear:active {
+  transform: translateY(2px) scale(0.95);
+}
+
+#custom-color-section {
+  margin-top: 20px;
+  padding: 12px;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  background: #fff;
+}
+
+#new-color-input {
+  width: 60px;
+  height: 40px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#add-color-btn {
+  width: auto;
+  padding: 10px 14px;
+  background: #000;
+  color: #fff;
+  border: 3px solid #000;
+  font-weight: bold;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+}
+
+#add-color-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.custom-color-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.custom-color-swatch {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.custom-color-name {
+  flex: 1;
+  padding: 8px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.custom-color-delete {
+  padding: 6px 10px;
+  background: #000;
+  color: #fff;
+  border: 3px solid #000;
+  font-weight: bold;
+  box-shadow: 3px 3px 0 #000;
+  cursor: pointer;
+}
+
+.custom-color-delete:hover {
+  background: #fff;
+  color: #000;
+}

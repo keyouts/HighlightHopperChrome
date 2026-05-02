@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Highlight Hopper Export</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+  <h1>Export Highlights</h1>
+
+  <label class="tag-filter-label">Filter by tags</label>
+  <div id="export-tag-container" class="tag-bar"></div>
+
+  <button id="export-txt-btn" aria-label="Download all highlights as a text file">Download Highlights (.txt)</button>
+  <button id="export-csv-btn" aria-label="Download all highlights as a CSV file">Download Highlights (.csv)</button>
+
+  <div class="hint">
+    TXT groups highlights by page and color. CSV is a flat table for Excel/Sheets.
+  </div>
+
+  <input type="file" id="import-file" accept=".csv" aria-label="Select CSV file to import highlights">
+  <button id="import-trigger" aria-label="Choose a CSV file to import">Choose CSV File</button>
+
+  <div id="import-filename" class="filename-label" role="status" aria-live="polite"></div>
+
+  <button id="import-btn" aria-label="Import highlights from selected CSV file">Import CSV</button>
+
+  <div id="import-error" class="error-box" role="alert"></div>
+
+  <h1>Custom Highlight Colors</h1>
+
+  <div id="custom-color-section">
+    <input type="color" id="new-color-input">
+    <button id="add-color-btn">Add Color</button>
+    <div id="custom-color-list"></div>
+  </div>
+
+  <a href="privacy_policy.html" class="highlight-hopper" role="link" aria-label="Open privacy policy">Privacy Policy</a>
+
+  <script src="options.js"></script>
+</body>
+</html>
